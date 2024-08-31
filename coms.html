@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commissions Progress - Blog of Sabi Woofington</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('Mochiwall.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(75, 0, 130, 0.8);
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-content img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(90, 0, 140, 0.8);
+        }
+
+        nav a {
+            color: #fff;
+            padding: 1rem;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: rgba(110, 0, 160, 0.8);
+        }
+
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+            gap: 1rem;
+        }
+
+        .block {
+            background-color: #6a0dad;
+            border: 1px solid #4b0082;
+            padding: 1rem;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centrar contenido horizontalmente */
+            text-align: center; /* Centrar texto */
+            position: relative;
+        }
+
+        .block img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .block-content {
+            width: 100%;
+        }
+
+        .block h3 {
+            margin: 0;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #8a2be2;
+            border-radius: 5px;
+            text-align: center;
+            color: #fff;
+            line-height: 20px;
+        }
+
+        footer {
+            background-color: rgba(75, 0, 130, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="mochis.png" alt="Mochis">
+            <h1>Commissions Progress - Blog of Sabi Woofington</h1>
+            <img src="mochis.png" alt="Mochis">
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="commissions.html">Commissions Progress</a>
+        <a href="goals.html">Goals Progress</a>
+    </nav>
+
+    <div class="container">
+        <section id="progress">
+            <h2>Commissions Progress</h2>
+
+            <div class="grid-container">
+                <!-- Block 1 -->
+                <div class="block">
+                    <img src="icon1.png" alt="Icon 1">
+                    <div class="block-content">
+                        <h3>Personal drawing</h3>
+                        <p>Status: In Progress</p>
+                        <p>Details: NONE.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 0%;">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 2 -->
+                <div class="block">
+                    <img src="icon1.png" alt="Icon 2">
+                    <div class="block-content">
+                        <h3>Personal drawing</h3>
+                        <p>Status: Not Started</p>
+                        <p>Details: NONE.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 0%;">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 3 -->
+                <div class="block">
+                    <img src="icon2.png" alt="Icon 3">
+                    <div class="block-content">
+                        <h3>Art Raffle</h3>
+                        <p>Status: Not Started </p>
+                        <p>Details: Drawing for the raffle winner.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 0%;">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 4 -->
+                <div class="block">
+                    <img src="icon3.png" alt="Icon 4">
+                    <div class="block-content">
+                        <h3>Spearmint Commission</h3>
+                        <p>Status: Not Started</p>
+                        <p>Details: Full-body Shaded + alt</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 0%;">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 5 -->
+                <div class="block">
+                    <img src="icon1.png" alt="Icon 2">
+                    <div class="block-content">
+                        <h3>Personal drawing (Meme)</h3>
+                        <p>Status: Not Started</p>
+                        <p>Details: NONE.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 0%;">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 6 -->
+                <div class="block">
+                    <img src="icon1.png" alt="Icon 2">
+                    <div class="block-content">
+                        <h3>Personal drawing (Lore)</h3>
+                        <p>Status: Not Started</p>
+                        <p>Details: NONE.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 0%;">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 7 -->
+                <div class="block">
+                    <img src="icon1.png" alt="Icon 2">
+                    <div class="block-content">
+                        <h3>Personal drawing pink panther</h3>
+                        <p>Status: Not Started</p>
+                        <p>Details: NONE.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 0%;">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Blog of Sabi Woofington. All rights reserved.</p>
+    </footer>
+</body>
+</html>
