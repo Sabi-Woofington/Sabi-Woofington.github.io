@@ -67,23 +67,6 @@
             margin-top: 1rem;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-            background-color: #8a2be2; /* Light purple */
-        }
-
-        table, th, td {
-            border: 1px solid #6a0dad; /* Dark purple border */
-            padding: 8px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #7b68ee; /* Medium purple */
-        }
-
         footer {
             background-color: rgba(75, 0, 130, 0.8); /* Dark purple with transparency */
             color: #fff;
@@ -166,44 +149,62 @@
             border-radius: 5px;
             margin-top: 1rem;
         }
-        .popup {
-    position: fixed;
-    top: -100%; /* Inicialmente fuera de la pantalla */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 600px; /* Ajusta el tamaño según sea necesario */
-    animation: slideDown 1s ease-out, bounce 0.5s 1s ease-in;
-    animation-fill-mode: forwards; /* Mantén la posición final */
-    z-index: 1000;
-    cursor: pointer;
-}
 
-.popup img {
-    width: 100%;
-    border-radius: 10px;
-}
+        .price-cards {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
 
-@keyframes slideDown {
-    from {
-        top: -100%;
-    }
-    to {
-        top: 20%; /* Ajusta la posición final */
-    }
-}
+        .price-card {
+            background-color: #6a0dad; /* Purple background */
+            border: 1px solid #4b0082; /* Darker purple border */
+            padding: 1rem;
+            border-radius: 8px;
+            width: 30%;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* White glow effect */
+            animation: float 2s ease-in-out infinite; /* Floating effect always active */
+        }
 
-@keyframes bounce {
-    0% {
-        transform: translateX(-50%) translateY(0);
-    }
-    50% {
-        transform: translateX(-50%) translateY(-10px);
-    }
-    100% {
-        transform: translateX(-50%) translateY(0);
-    }
-}
+        .price-card:hover {
+            transform: scale(1.1); /* Make the card bigger when hovered */
+            animation: none; /* Stop the floating animation */
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.7); /* Brighter glow on hover */
+        }
 
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .price-card h4 {
+            text-align: center;
+        }
+
+        .price-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .price-card ul li {
+            margin: 5px 0;
+        }
+
+        /* Add image to the price cards */
+        .price-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -220,10 +221,6 @@
         <a href="coms.html">Commissions Progress</a>
         <a href="goals.html">Goals Progress</a>
     </nav>
-    
-<div id="popup" class="popup">
-    <img src="pop1.png" alt="Popup Image" id="popupImage">
-</div>
     
     <div class="container">
         <section id="home">
@@ -258,68 +255,59 @@
             </div>
 
             <h3>Commission Prices</h3>
-            <table>
-                <tr>
-                    <th></th>
-                    <th>Headshot</th>
-                    <th>Halfbody</th>
-                    <th>Full body</th>
-                    <th>Extra Character</th>
-                    <th>Background</th>
-                </tr>
-                <tr>
-                    <td>Sketch</td>
-                    <td>$ 10 USD</td>
-                    <td>$ 12 USD</td>
-                    <td>$ 14 USD</td>
-                    <td>+$ 4 USD</td>
-                    <td>+$ 3 USD</td>
-                </tr>
-                <tr>
-                    <td>Flat color</td>
-                    <td>$ 15 USD</td>
-                    <td>$ 18 USD</td>
-                    <td>$ 20 USD</td>
-                    <td>+$ 6 USD</td>
-                    <td>+$ 6 USD</td>
-                </tr>
-                <tr>
-                    <td>Shade</td>
-                    <td>$ 20 USD</td>
-                    <td>$ 28 USD</td>
-                    <td>$ 32 USD</td>
-                    <td>+$ 8 USD</td>
-                    <td>+$ 8 USD</td>
-                </tr>
-            </table>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-icons">
-                <a href="https://x.com/Sabi_ElPulgas" class="contact-icon" target="_blank">
-                    <img src="x.png" alt="Twitter">
-                </a>
-                <a href="https://e621.net/users/1589273" class="contact-icon" target="_blank">
-                    <img src="e.jpg" alt="e621">
-                </a>
-                <a href="https://discord.gg/eWQVpEwbZ2" class="contact-icon" target="_blank">
-                    <img src="d.jpg" alt="Discord">
-                </a>
+            <div class="price-cards">
+                <div class="price-card">
+                    <img src="ex1.png" alt="Sketch">
+                    <h4>Flat Color</h4>
+                    <ul>
+                        <li>Headshot: $15 USD</li>
+                        <li>Halfbody: $20 USD</li>
+                        <li>Full body: $25 USD</li>
+                        <li>Extra Character: +$5 USD</li>
+                        <li>Background: +$5 USD</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <img src="ex2.png" alt="Flat Color">
+                    <h4>Full Render</h4>
+                    <ul>
+                        <li>Headshot: $30 USD</li>
+                        <li>Halfbody: $35 USD</li>
+                        <li>Full body: $40 USD</li>
+                        <li>Extra Character: +$10 USD</li>
+                        <li>Background: +$10 USD</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <img src="ex3.png" alt="Full Render">
+                    <h4>Model Sheet</h4>
+                    <ul>
+                        <li>2 views + 3 Expresions: $45 USD</li>
+                        <li>Extra expresions: +$6 USD</li>
+                        <li>Alt clothes: +$10 USD</li>
+                    </ul>
+                </div>
             </div>
         </section>
-    </div>
-    
-<script>
-    document.getElementById("popup").addEventListener("click", function () {
-        window.open("https://x.com/Sabi_ElPulgas/status/1860144861204107585", "_blank");
-    });
-    setTimeout(() => {
-    document.getElementById("popup").style.display = "none";
-}, 10000);
-</script>
 
-    <footer>
-        <p>&copy; 2024 Sabi Woofington. All rights reserved.</p>
-    </footer>
+     <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-icons">
+            <a href="https://x.com/Sabi_ElPulgas" class="contact-icon" target="_blank">
+                <img src="x.png" alt="Twitter">
+            </a>
+            <a href="https://e621.net/users/1589273" class="contact-icon" target="_blank">
+                <img src="e.jpg" alt="e621">
+            </a>
+            <a href="https://discord.gg/eWQVpEwbZ2" class="contact-icon" target="_blank">
+                <img src="d.jpg" alt="Discord">
+            </a>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 Sabi Woofington. All rights reserved.</p>
+</footer>
 </body>
 </html>
