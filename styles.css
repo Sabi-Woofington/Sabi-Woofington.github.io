@@ -1,0 +1,243 @@
+/* Reseteo de márgenes y rellenos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+    background-image: url('fondo.png');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #ffffff;
+    line-height: 1.6;
+    padding-bottom: 50px; /* Para dejar espacio para la barra de noticias */
+}
+
+/* Barra de navegación */
+nav ul {
+    display: flex;
+    list-style: none;
+    background-color: #6a4c93; /* color morado */
+    padding: 10px 20px;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: #f0f0f0;
+}
+
+/* Secciones */
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+header {
+    background-color: #6a4c93; /* color morado */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* About Me - Contenedor Flex */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px; /* Espacio entre los bloques */
+}
+
+/* Bloque de Información */
+.info-block {
+    flex: 1;
+    background-color: #7e39cc;
+    padding: 20px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+/* Bloque de Imagen de Fursona */
+.image-block {
+    flex-shrink: 0; /* Evita que la imagen se reduzca */
+    width: 200px; /* Tamaño fijo de la imagen */
+    height: 200px; /* Tamaño fijo de la imagen */
+    overflow: hidden;
+    border-radius: 50%; /* Hace la imagen circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el área sin deformarse */
+}
+
+/* Estilo de las Comisiones (más grande para acomodar la información) */
+#commissions {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#commissions h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #ffffff; /* Morado */
+}
+
+.commission-container {
+    display: flex;
+    justify-content: space-around; /* Alineación de los recuadros en una fila */
+    gap: 30px; /* Espacio mayor entre los recuadros */
+    margin: 0 auto;
+    max-width: 1300px; /* Aumento el tamaño máximo del contenedor */
+    flex-wrap: wrap; /* Permite que los recuadros se ajusten a la siguiente fila si es necesario */
+}
+
+.commission-box {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco y algo transparente */
+    border-radius: 10px; /* Borde redondeado */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease; /* Animación suave al hacer hover */
+    width: 270px; /* Ancho aumentado */
+    height: 380px; /* Alto aumentado */
+}
+
+.commission-box:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del recuadro al pasar el cursor */
+}
+
+.commission-box img {
+    width: 85%; /* Aumento el tamaño de la imagen */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.commission-info h3 {
+    font-size: 1.3em; /* Título ajustado */
+    color: #6a4c93; /* Morado */
+    margin-bottom: 5px;
+}
+
+.commission-info p {
+    font-size: 1em; /* Texto ajustado */
+    margin: 5px 0;
+    color: #333;
+}
+
+
+/* Noticias (News) */
+#news {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparente oscuro */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2em;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#news p {
+    display: inline-block;
+    padding-right: 100%; /* Deja espacio suficiente para el texto */
+    animation: scrollNews 25s linear infinite; /* Movimiento de derecha a izquierda */
+}
+
+/* Animación para mover las noticias de derecha a izquierda */
+@keyframes scrollNews {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Estilo de redes sociales */
+#social-media {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#social-media h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #6a4c93; /* Morado */
+}
+
+.social-media-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los recuadros */
+}
+
+.social-box {
+    width: 100px; /* Tamaño fijo del recuadro */
+    height: 100px;
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que la imagen no sobresalga del recuadro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Animación suave al hacer hover */
+}
+
+.social-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+}
+
+.social-box:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del recuadro al pasar el cursor */
+}
+
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #6a4c93;
+    color: white;
+}
+
+footer p {
+    font-size: 1em;
+}
+
