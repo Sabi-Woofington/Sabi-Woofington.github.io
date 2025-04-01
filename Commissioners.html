@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commissioners</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card img.profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .badge {
+            width: 40px;
+            height: 40px;
+            margin-left: auto;
+        }
+        .inventory {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        .inventory img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        .pagination button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #6200ea;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="comms.html">Commission Progress</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <input type="text" class="search-bar" id="search" placeholder="Search by name..." onkeyup="filterCards()">
+    </div>
+    
+    <div class="cards-container" id="cardsContainer"></div>
+    <div class="pagination" id="pagination"></div>
+    
+    <script>
+        const commissioners = [
+            { name: "User 1", img: "usuario1.png", badge: "badge1.png", items: ["item1.png", "item2.png", "item3.png", "item4.png", "item5.png"] },
+            { name: "User 2", img: "usuario2.png", badge: "badge2.png", items: ["item1.png", "item3.png", "item4.png", "item2.png", "item5.png"] },
+            { name: "User 3", img: "usuario3.png", badge: "badge3.png", items: ["item5.png", "item1.png", "item2.png", "item4.png", "item3.png"] },
+            { name: "User 1", img: "usuario1.png", badge: "badge1.png", items: ["item1.png", "item2.png", "item3.png", "item4.png", "item5.png"] },
+            { name: "User 2", img: "usuario2.png", badge: "badge2.png", items: ["item1.png", "item3.png", "item4.png", "item2.png", "item5.png"] },
+            { name: "User 3", img: "usuario3.png", badge: "badge3.png", items: ["item5.png", "item1.png", "item2.png", "item4.png", "item3.png"] },
+            { name: "User 1", img: "usuario1.png", badge: "badge1.png", items: ["item1.png", "item2.png", "item3.png", "item4.png", "item5.png"] },
+            { name: "User 2", img: "usuario2.png", badge: "badge2.png", items: ["item1.png", "item3.png", "item4.png", "item2.png", "item5.png"] },
+            { name: "User 3", img: "usuario3.png", badge: "badge3.png", items: ["item5.png", "item1.png", "item2.png", "item4.png", "item3.png"] },
+            { name: "User 1", img: "usuario1.png", badge: "badge1.png", items: ["item1.png", "item2.png", "item3.png", "item4.png", "item5.png"] },
+            { name: "User 2", img: "usuario2.png", badge: "badge2.png", items: ["item1.png", "item3.png", "item4.png", "item2.png", "item5.png"] },
+            { name: "User 3", img: "usuario3.png", badge: "badge3.png", items: ["item5.png", "item1.png", "item2.png", "item4.png", "item3.png"] },
+            { name: "User 1", img: "usuario1.png", badge: "badge1.png", items: ["item1.png", "item2.png", "item3.png", "item4.png", "item5.png"] },
+            { name: "User 2", img: "usuario2.png", badge: "badge2.png", items: ["item1.png", "item3.png", "item4.png", "item2.png", "item5.png"] },
+            { name: "User 3", img: "usuario3.png", badge: "badge3.png", items: ["item5.png", "item1.png", "item2.png", "item4.png", "item3.png"] },
+            { name: "User 1", img: "usuario1.png", badge: "badge1.png", items: ["item1.png", "item2.png", "item3.png", "item4.png", "item5.png"] },
+            { name: "User 2", img: "usuario2.png", badge: "badge2.png", items: ["item1.png", "item3.png", "item4.png", "item2.png", "item5.png"] },
+            { name: "User 3", img: "usuario3.png", badge: "badge3.png", items: ["item5.png", "item1.png", "item2.png", "item4.png", "item3.png"] },
+            { name: "User 1", img: "usuario1.png", badge: "badge1.png", items: ["item1.png", "item2.png", "item3.png", "item4.png", "item5.png"] },
+            { name: "User 2", img: "usuario2.png", badge: "badge2.png", items: ["item1.png", "item3.png", "item4.png", "item2.png", "item5.png"] },
+            { name: "User 3", img: "usuario3.png", badge: "badge3.png", items: ["item5.png", "item1.png", "item2.png", "item4.png", "item3.png"] },
+            // Add more users as needed
+        ];
+        
+        let currentPage = 1;
+        const cardsPerPage = 10;
+
+        function displayCards() {
+            const container = document.getElementById('cardsContainer');
+            const pagination = document.getElementById('pagination');
+            container.innerHTML = '';
+            pagination.innerHTML = '';
+            
+            const startIndex = (currentPage - 1) * cardsPerPage;
+            const endIndex = startIndex + cardsPerPage;
+            const paginatedItems = commissioners.slice(startIndex, endIndex);
+            
+            paginatedItems.forEach(user => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                    <img src="${user.img}" class="profile-pic" alt="${user.name}">
+                    <div>
+                        <h3>${user.name}</h3>
+                    </div>
+                    <img src="${user.badge}" class="badge" alt="badge">
+                    <div class="inventory">
+                        ${user.items.map(item => `<img src="${item}" alt="item">`).join('')}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            
+            const totalPages = Math.ceil(commissioners.length / cardsPerPage);
+            for (let i = 1; i <= totalPages; i++) {
+                const button = document.createElement('button');
+                button.textContent = i;
+                button.disabled = i === currentPage;
+                button.onclick = () => {
+                    currentPage = i;
+                    displayCards();
+                };
+                pagination.appendChild(button);
+            }
+        }
+        
+        function filterCards() {
+            const searchValue = document.getElementById("search").value.toLowerCase();
+            document.querySelectorAll(".card").forEach(card => {
+                const name = card.querySelector("h3").textContent.toLowerCase();
+                card.style.display = name.includes(searchValue) ? "flex" : "none";
+            });
+        }
+        
+        displayCards();
+    </script>
+</body>
+</html>
