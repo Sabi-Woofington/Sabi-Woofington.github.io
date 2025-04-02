@@ -241,3 +241,52 @@ footer p {
     font-size: 1em;
 }
 
+/* Estilo para la sección de Referral */
+#referral {
+    background-color: #5c4e9c; /* Un fondo morado claro */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border: 2px solid #4a3a8c; /* Un borde morado oscuro */
+}
+
+#referral h2 {
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
+
+.referral-box {
+    background-color: #4a3a8c; /* Fondo más oscuro para el recuadro */
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+}
+
+
+/* Estilo para la sección de anuncio de temporada */
+#season-announcement {
+    background-color: #5c4e9c; /* Un fondo morado claro */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    border: 2px solid #4a3a8c; /* Un borde morado oscuro */
+}
+
+#season-announcement .announcement-box {
+    background-color: #4a3a8c; /* Fondo más oscuro para el recuadro */
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+}
+
+#season-announcement h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#season-announcement p {
+    font-size: 1.1em;
+}
