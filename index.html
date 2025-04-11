@@ -5,10 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stinky.co</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo del modal */
+        #age-warning {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        #warning-content {
+            background: #000000;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 80%;
+        }
+
+        #warning-content h2 {
+            margin-bottom: 15px;
+        }
+
+        #warning-content p {
+            margin-bottom: 20px;
+        }
+
+        #accept-btn {
+            padding: 10px 20px;
+            background-color: #6200ea;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #accept-btn:hover {
+            background-color: #3700b3;
+        }
+    </style>
 </head>
 <body>
+    <div id="age-warning">
+        <div id="warning-content">
+            <h2>Warning: 18+ Content</h2>
+            <p>You must be over 18 years old to enter this site.</p>
+            <button id="accept-btn">I am 18 or older</button>
+        </div>
+    </div>
+    <script>
+        // Función para mostrar el modal solo si no se ha aceptado previamente
+        window.onload = function() {
+            if (!getCookie('ageVerified')) {
+                document.getElementById('age-warning').style.display = 'flex';
+            }
 
-    <!-- Barra de navegación -->
+            document.getElementById('accept-btn').onclick = function() {
+                setCookie('ageVerified', 'true', 365); // Cookie por 365 días
+                document.getElementById('age-warning').style.display = 'none';
+            }
+        };
+
+        // Función para establecer una cookie
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        // Función para obtener el valor de una cookie
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+    </script>
+
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -23,7 +110,7 @@
     <header>
         <h1>Blog of Sabi Yeen</h1>
         <p>Welcome to my personal space where you can find information about my art, commissions, and updates!</p>
-        <p>BETA 01.04.25</p>
+        <p>BETA 04.11.25</p>
     </header>
 
     <!-- Sección "About Me" -->
@@ -46,8 +133,8 @@
 
     <section id="season-announcement">
     <div class="announcement-box">
-        <h3>Season 1: Spring!</h3>
-        <p>"The start of the new improved page purchased by entrepreneur Sabi Yeen and renamed to Stinky.co. All users who purchase a commission will receive their own section in 'Users' and will have a chance to win prizes (more information in the 'Items Info' section)."</p>
+        <h3>Season 2: Shop & badges!</h3>
+        <p>"The entrepreneur Sabi Yeen is pleased to announce a new section on the website: a store featuring official Stinky.co brand products! These items can be added to your drawings or commissions to earn discount coupons! Additionally, the first Badges have already been distributed to users! These will have various effects, such as reducing the cost of commissions or guaranteeing coupons at the start of each new season or every month."</p>
     </div>
     </section>
 
@@ -148,6 +235,7 @@
             "What’s a dog’s favorite city? New Yorkie!",
             "What’s the hardest part about being a dog? The “ruff” days.",
             "THE GAME",
+            "Oh WOW! Season 2",
             "Bark bark bark bark bark Deltarune Tomorrow!",
             "What kind of dog likes taking a bath every day? The Shampoo-dle",
             "What do you call a cold dog? A chili dog",
