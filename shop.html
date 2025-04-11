@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop—Stinky.co</title>
+    <style>
+        /* Reseteo de márgenes y rellenos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo general */
+        body {
+            background-image: url('fondo.png');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            line-height: 1.6;
+            padding-bottom: 50px; /* Para dejar espacio para la barra de noticias */
+        }
+
+        /* Barra de navegación */
+        nav ul {
+            display: flex;
+            list-style: none;
+            background-color: #6a4c93; /* color morado */
+            padding: 10px 20px;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        nav ul li a:hover {
+            color: #f0f0f0;
+        }
+
+        /* Header */
+        header {
+            background-color: #6a4c93; /* color morado */
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        /* Secciones */
+        section {
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 0 auto;
+            max-width: 1300px;
+        }
+
+        .product-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+            width: calc(25% - 20px); /* 4 columnas con espacio */
+            min-width: 250px;
+            height: auto; /* Ajuste dinámico */
+        }
+
+        .product-box:hover {
+            transform: scale(1.05);
+        }
+
+        .product-box img {
+            width: 85%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-info h3 {
+            font-size: 1.3em;
+            color: #6a4c93;
+            margin-bottom: 5px;
+        }
+
+        .product-info p {
+            font-size: 1.1em;
+            margin: 5px 0;
+            color: #333;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Estilo para estrellas */
+        .stars {
+            color: gold;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #6a4c93;
+            color: white;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="info.html">Items info</a></li>
+          <li><a href="coms.html">Commission Progress</a></li>
+          <li><a href="Commissioners.html">Users</a></li>
+          <li><a href="shop.html">Shop</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Stinky.co Shop!</h1>
+    </header>
+    <nav>
+      <ul>
+          <li><a href="#bebidas">Drinks</a></li>
+          <li><a href="#snacks">Snacks</a></li>
+          <li><a href="#camisas">T-shirts</a></li>
+          <li><a href="#medias">Socks</a></li>
+          <li><a href="#boxers">Boxers</a></li>
+          <li><a href="#tecnologia">Technology</a></li>
+      </ul>
+    </nav>
+<div style="background-color: #3b304b; color: #ffffff; padding: 15px 20px; text-align: center; font-weight: bold; font-size: 1em; border-bottom: 2px solid #6a4c93;">
+    <span style="color: #6a4c93; font-size: 1.2em;">ℹ️</span>
+    This store is just a simulation — you can request some of these products in your next commission to get coupons as a way to generate publicity!
+</div>
+    <!-- Sección Bebidas -->
+    <section id="bebidas">
+        <h2>Drinks</h2>
+        <div class="product-container">
+            <div class="product-box">
+                <img src="https://files.catbox.moe/thumbs/t_h342l7.png" alt="Bebida">
+                <div class="product-info">
+                    <h3>Burpberry Blast</h3>
+                    <p>Price: $199.99 Stincoins</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <div class="product-box">
+                <img src="https://files.catbox.moe/thumbs/t_pjvapg.png" alt="Bebida">
+                <div class="product-info">
+                    <h3>Funkberry Fizz</h3>
+                    <p>Price: $199.99 Stincoins</p>
+                    <div class="stars">★★★★☆</div>
+                </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_4fgytn.png" alt="Bebida">
+              <div class="product-info">
+                  <h3>Limey McBurp</h3>
+                  <p>Price: $199.99 Stincoins</p>
+                  <div class="stars">★★★★★</div>
+              </div>
+          </div>
+          <div class="product-box">
+            <img src="https://files.catbox.moe/thumbs/t_mjmfif.png" alt="Bebida">
+            <div class="product-info">
+                <h3>Stinkapple Storm</h3>
+                <p>Price: $199.99 Stincoins</p>
+                <div class="stars">★★★★☆</div>
+            </div>
+        </div>
+        <div class="product-box">
+          <img src="https://files.catbox.moe/thumbs/t_jawaj6.png" alt="Bebida">
+          <div class="product-info">
+              <h3>Stinkwater</h3>
+              <p>Price: $99.99 Stincoins</p>
+              <div class="stars">★★☆☆☆</div>
+          </div>
+      </div>
+      <div class="product-box">
+        <img src="https://files.catbox.moe/thumbs/t_411e0r.png" alt="Bebida">
+        <div class="product-info">
+            <h3>Sweaty soda</h3>
+            <p>Price: $899.99 Stincoins</p>
+            <div class="stars">★★★★★</div>
+        </div>
+    </div>
+  </div>
+        </div>
+    </section>
+
+    <!-- Sección Snacks -->
+    <section id="snacks">
+        <h2>Snacks</h2>
+        <div class="product-container">
+            <div class="product-box">
+                <img src="https://files.catbox.moe/thumbs/t_x9ciep.png" alt="Snack 1">
+                <div class="product-info">
+                    <h3>StinkO's</h3>
+                    <p>Price: $399.99 Stincoins</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Camisas -->
+    <section id="camisas">
+        <h2>T-shirts</h2>
+        <div class="product-container">
+            <div class="product-box">
+                <img src="https://files.catbox.moe/thumbs/t_r707om.png" alt="Camisa 1">
+                <div class="product-info">
+                    <h3>Bubbles</h3>
+                    <p>Price: $199.99 Stincoins</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_h3llkf.png" alt="Camisa 1">
+              <div class="product-info">
+                  <h3>Paw prints</h3>
+                  <p>Price: $199.99 Stincoins</p>
+                  <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_6we0nw.png" alt="Camisa 1">
+              <div class="product-info">
+                  <h3>Bad dog bone</h3>
+                  <p>Price: $199.99 Stincoins</p>
+                  <div class="stars">★★★☆☆</div>
+              </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_6camvn.png" alt="Camisa 1">
+              <div class="product-info">
+                  <h3>Cookie!</h3>
+                  <p>Price: $199.99 Stincoins</p>
+                  <div class="stars">★★★★☆</div>
+              </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_w2d1ob.png" alt="Camisa 1">
+              <div class="product-info">
+                  <h3>Smelly!</h3>
+                  <p>Price: $249.99 Stincoins</p>
+                  <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_l3e3ys.png" alt="Camisa 1">
+              <div class="product-info">
+                  <h3>Spooted T-shirt</h3>
+                  <p>Price: $299.99 Stincoins</p>
+                  <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_3brujz.png" alt="Camisa 1">
+              <div class="product-info">
+                  <h3>Stinky!</h3>
+                  <p>Price: $599.99 Stincoins</p>
+                  <div class="stars">★★★★☆</div>
+              </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_6nldp9.png" alt="Camisa 1">
+              <div class="product-info">
+                  <h3>Aplastao</h3>
+                  <p>Price: $899.99 Stincoins</p>
+                  <div class="stars">★★★★★</div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Medias -->
+    <section id="medias">
+        <h2>Long Socks</h2>
+        <div class="product-container">
+            <div class="product-box">
+                <img src="https://files.catbox.moe/thumbs/t_ldf0pb.png" alt="Medias 1">
+                <div class="product-info">
+                    <h3>Purple</h3>
+                    <p>Price: $199.99 Stincoins</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <div class="product-box">
+                <img src="https://files.catbox.moe/thumbs/t_cpmhau.png" alt="Medias 2">
+                <div class="product-info">
+                  <h3>white</h3>
+                  <p>Price: $199.99 Stincoins</p>
+                  <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_n944jh.png" alt="Medias 1">
+              <div class="product-info">
+                <h3>Mint</h3>
+                <p>Price: $199.99 Stincoins</p>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_hlison.png" alt="Medias 1">
+              <div class="product-info">
+                <h3>Red</h3>
+                <p>Price: $199.99 Stincoins</p>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_vzku0g.png" alt="Medias 1">
+              <div class="product-info">
+                <h3>Dark Blue</h3>
+                <p>Price: $199.99 Stincoins</p>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_ui888f.png" alt="Medias 1">
+              <div class="product-info">
+                <h3>pink</h3>
+                <p>Price: $199.99 Stincoins</p>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_j483m0.png" alt="Medias 1">
+              <div class="product-info">
+                <h3>Rainbow</h3>
+                <p>Price: $499.99 Stincoins</p>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Boxers -->
+    <section id="boxers">
+        <h2>Boxers</h2>
+        <div class="product-container">
+            <div class="product-box">
+                <img src="https://files.catbox.moe/thumbs/t_45soon.png" alt="Boxer 1">
+                <div class="product-info">
+                    <h3>Purple</h3>
+                    <p>Price: $199.99 Stincoins</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <div class="product-box">
+                <img src="https://files.catbox.moe/thumbs/t_bnee9j.png" alt="Boxer 2">
+                <div class="product-info">
+                    <h3>Red</h3>
+                    <p>Price: $199.99 Stincoins</p>
+                    <div class="stars">★★★★☆</div>
+                </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_hcdn8f.png" alt="Boxer 2">
+              <div class="product-info">
+                  <h3>Blue</h3>
+                  <p>Price: $199.99 Stincoins</p>
+                  <div class="stars">★★★★☆</div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Tecnología -->
+    <section id="tecnologia">
+        <h2>Technology</h2>
+        <div class="product-container">
+            <div class="product-box">
+                <img src="https://files.catbox.moe/thumbs/t_cji5r1.png" alt="Tecnología 1">
+                <div class="product-info">
+                    <h3>Sniphone PRO black</h3>
+                    <p>Price: $12999.99 Stincoins</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_wlzzp7.png" alt="Tecnología 1">
+              <div class="product-info">
+                  <h3>Sniphone PRO light blue</h3>
+                  <p>Price: $12999.99 Stincoins</p>
+                  <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="product-box">
+              <img src="https://files.catbox.moe/thumbs/t_zr5evr.png" alt="Tecnología 1">
+              <div class="product-info">
+                  <h3>Sniphone PRO red</h3>
+                  <p>Price: $12999.99 Stincoins</p>
+                  <div class="stars">★★★★★</div>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Stinky.co - All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
